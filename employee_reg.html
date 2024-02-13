@@ -67,6 +67,23 @@
             background-color: #0056b3;
         }
     </style>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            document.getElementById('registration-form').addEventListener('submit', function(event) {
+                event.preventDefault();
+    
+                var formGroups = document.querySelectorAll('.form-group');
+                formGroups.forEach(function(formGroup) {
+                    var label = formGroup.querySelector('label').textContent;
+                    var input = formGroup.querySelector('input, select').value;
+                    console.log(label.trim() + ': ' + input);
+                });
+            });
+        });
+    </script>
+    
+    
 </head>
 <body>
     <div class="container">
